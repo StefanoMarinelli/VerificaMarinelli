@@ -20,7 +20,7 @@
         <a class="btn btn-info" th:href="@{/films/ricerca}" >Ricerca Film</a>
         <br>
         <br>
-        <table border="3">
+        <table border="3" th:if="${!#lists.isEmpty(films)}">
             <tr>
                 <th>Codice</th>
                 <th>Titolo</th>
