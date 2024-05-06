@@ -11,30 +11,37 @@
         <h1 style="color:red">IL CATALOGO FILM</h1>
     </center>
     <div style="padding:15px">
-    <a class="btn btn-primary" th:href="@{/}">Home</a>
-    
-    <br> <br>
-    <a class="btn btn-secondary" th:href="@{/films/nuovo}">Aggiungi Film</a>
-    <br>
-    <br>
-    <table border="3">
-        <tr>
-            <th>Codice</th>
-            <th>Titolo</th>
-            <th>Genere</th>
-            <th>Anno</th>
-            <th>Voto</th>
-        </tr>
-        <tr th:each="f : ${films}">
-            <td style="text-align: center"><a th:href="@{'/films/' + ${f.codice}}" th:text="${f.codice}"></a></td> 
-            <td style="text-align: center" th:text="${f.titolo}"></td> 
-            <td style="text-align: center" th:text="${f.genere}"></td> 
-            <td style="text-align: center" th:text="${f.anno}"></td> 
-            <td style="text-align: center" th:text="${f.voto}"></td> 
-            <td><a class="btn btn-danger" th:href="@{'/film/eliminato/' + ${f.codice}}">Elimina film</a> </td>
-        </tr>
-    </table>
-    <small th:if="${#lists.isEmpty(films)}">Nessun film presente</small>
+        <a class="btn btn-primary" th:href="@{/}">Home</a>
+        
+        <br> <br>
+        <a class="btn btn-secondary" th:href="@{/films/nuovo}">Aggiungi Film</a>
+        <br>
+        <br>
+        <a class="btn btn-info" th:href="@{/films/ricerca}" >Ricerca Film</a>
+        <br>
+        <br>
+        <table border="3">
+            <tr>
+                <th>Codice</th>
+                <th>Titolo</th>
+                <th>Genere</th>
+                <th>Anno</th>
+                <th>Voto</th>
+            </tr>
+            <tr th:each="f : ${films}">
+                <td style="text-align: center"><a th:href="@{'/films/' + ${f.codice}}" th:text="${f.codice}"></a></td> 
+                <td style="text-align: center" th:text="${f.titolo}"></td> 
+                <td style="text-align: center" th:text="${f.genere}"></td> 
+                <td style="text-align: center" th:text="${f.anno}"></td> 
+                <td style="text-align: center" th:text="${f.voto}"></td> 
+                <td><a class="btn btn-danger" th:href="@{'/film/eliminato/' + ${f.codice}}">Elimina film</a> </td>
+            </tr>
+        </table>
+        <small th:if="${#lists.isEmpty(films)}">Nessun film presente</small>
+        <br> <br>
+        <a class="btn btn-danger" th:href="@{/films/eliminalista}">ELIMINA TUTTI I FILM</a>
     </div>
+
+    
 </body>
 </html>

@@ -58,4 +58,11 @@ public class FilmService {
             }
         }
     }
+
+    /*
+     * Eliminazione della lista
+     */
+    public void deleteList(){
+        films.clear();
+    }
 }

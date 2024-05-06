@@ -6,10 +6,14 @@
     <title>FILTRO</title>
 </head>
 <body>
-    <h1>RICERCA FILM</h1>
-    <form method="POST" th:action="@{/film/view/}" th:object="${films}">
-        <label>Titolo</label>
-        <textarea name=""></textarea>
-    </form>
+    <center>
+        <h1 style="color:red">RICERCA FILM</h1>
+    </center>
+    <div>
+        <form method="POST" th:action="@{/film/view/}" th:object="${films}">
+            <label>Titolo</label>
+            <textarea name="" rows="15" column="10"></textarea>
+        </form>
+    </div>
 </body>
 </html>
