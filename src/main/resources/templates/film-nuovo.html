@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>NEW FILM</title>
+</head>
+<body>
+    <div style="padding:15px">
+        <center>
+            <h1 style="color:darkcyan">AGGIUNGI UN NUOVO FILM</h1>
+        </center>
+
+        <div>
+            <a class="btn btn-primary" th:href="@{/}">Home</a>
+        </div>
+        <div style="padding:15px">
+            <form method="POST" th:action="@{/film/view}" th:object="${films}">
+                
+                <div>
+                    <label>Codice</label>
+                    <br>
+                    <input type="text" th:field="*{codice}" placeholder="XX00XX">
+                </div>
+
+                <div>
+                    <label>Nome</label>
+                    <br>
+                    <input type="text" th:field="*{titolo}" placeholder="Star Wars">
+                </div>
+                <br>
+                <div>
+                    <!-- <label>Genere</label>
+                    <input type="text" th:field="*{genere}" placeholder="Sci-fi"> -->
+                    <label>Genere</label>
+                    <select name="genere" id="genere" th:field="*{genere}">  
+                        <option value=""  selected disabled hidden></option>
+                        <option value="sci-fi">Sci-fi</option>
+                        <option value="comico">Comico</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="horror">Horror</option>
+                        <option value="azione" >Azione</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Anno</label>
+                    <br>
+                    <input type="text" th:field="*{anno}" placeholder="2024">
+                </div>
+
+                <br>
+                <div>
+                    <!-- <label>Voto</label>
+                    <br>
+                    <input type="text" th:field="*{voto}" placeholder="27"> -->
+                    <label>Voto</label>
+                    <select name="voto" id="voto" th:field="*{voto}">  
+                        <option value=""  selected disabled hidden></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" >5</option>
+                    </select>
+                </div>
+                <div>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Aggiungi film">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

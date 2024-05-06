@@ -9,4 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Film {
     
+    String codice;
+    String titolo;
+    String genere;
+    int anno;
+    String voto;
 }
